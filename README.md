@@ -13,7 +13,8 @@ I couldn't find a module satisfying all of these criteria:
 
 so here we are.
 
-originaly inspired by https://github.com/s2texperiments/aws-transcription-to-subtitle
+
+inspired by https://github.com/s2texperiments/aws-transcription-to-subtitle
 
 
 ## api
