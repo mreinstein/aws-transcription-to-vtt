@@ -1,0 +1,26 @@
+{
+  "name": "aws-transcription-to-vtt",
+  "version": "1.0.0",
+  "description": "convert an AWS transcribe JSON body into a .vtt file",
+  "main": "dist/aws-transcription-to-vtt.cjs.js",
+  "module": "index.js",
+  "scripts": {
+    "build": "rollup --format=cjs --file=dist/aws-transcription-to-vtt.cjs.js index.js",
+    "prepublishOnly": "npm run build",
+    "test": "tap test/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mreinstein/aws-transcription-to-vtt.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mreinstein/aws-transcription-to-vtt/issues"
+  },
+  "homepage": "https://github.com/mreinstein/aws-transcription-to-vtt#readme",
+  "devDependencies": {
+    "rollup": "^1.2.2",
+    "tap": "^12.5.3"
+  }
+}
