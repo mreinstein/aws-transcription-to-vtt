@@ -1,5 +1,7 @@
 # aws-transcription-to-vtt
 
+[![Build Status](https://travis-ci.org/mreinstein/aws-transcription-to-vtt.svg?branch=master)](https://travis-ci.org/mreinstein/aws-transcription-to-vtt)
+
 Takes the JSON from [Amazon AWS Transcribe](https://aws.amazon.com/transcribe/) and outputs a VTT file.
 
 I couldn't find a module satisfying all of these criteria:
