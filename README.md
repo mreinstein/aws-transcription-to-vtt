@@ -24,7 +24,7 @@ const json = {
         items: [
             {
                 start_time: "7.84",
-                end_time": "12.87",
+                end_time: "12.87",
                 alternatives: [
                     {
                         confidence: "0.4523",
