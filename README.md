@@ -26,11 +26,14 @@ returns a string consisting of the json converted to `vtt` format.
 
 
 ## including
+
+```javascript
 import vttConvert from 'aws-transcription-to-vtt'  // modern es modules approach
 
 // *OR*
 
 const vttConvert = require('aws-transcription-to-vtt') // commonjs (node) approach
+```
 
 
 ## example
