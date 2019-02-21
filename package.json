@@ -22,5 +22,17 @@
   "devDependencies": {
     "rollup": "^1.2.2",
     "tap": "^12.5.3"
-  }
+  },
+  "keywords": [
+    "AWS",
+    "Transcribe",
+    "JSON",
+    "VTT",
+    "WebVTT",
+    "speech",
+    "recognition",
+    "format",
+    "subtitle",
+    "subtitles"
+  ]
 }
