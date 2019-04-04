@@ -10,5 +10,3 @@ for (const sample of [ 'expert', 'se-radio' ]) {
     
     tap.equals(vtt, vttConvert(json));
 }
-
-//tap.end();

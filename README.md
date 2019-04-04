@@ -31,11 +31,11 @@ returns a string consisting of the json converted to `vtt` format.
 ## including
 
 ```javascript
-import vttConvert from 'aws-transcription-to-vtt'  // modern es modules approach
+import vttConvert from 'aws-transcription-to-vtt'
 
 // *OR*
 
-const vttConvert = require('aws-transcription-to-vtt') // commonjs (node) approach
+const vttConvert = require('aws-transcription-to-vtt')
 ```
 
 
