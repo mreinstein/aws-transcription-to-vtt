@@ -71,16 +71,14 @@ export default function awsTranscribeToVtt (event, { characterPerLine = 40, maxL
             .map((e) => ({
                 content: e.alternatives[0].content,
                 from: Math.floor(parseFloat(e.start_time) * 1000),
-                to: Math.floor(parseFloat(e.end_time)) * 1000,
+                to: Math.floor(parseFloat(e.end_time) * 1000),
                 characterCount: e.alternatives[0].content.length,
-                //pronunciation|punctuation
-                type: e.type,
+                type: e.type, // pronunciation | punctuation
                 lines: 1
             }))
             .reduce((acc, cur) => {
-                if (acc.length === 0) {
+                if (acc.length === 0)
                     return [cur]
-                }
 
                 const last = acc[acc.length - 1];
 
@@ -110,9 +108,8 @@ export default function awsTranscribeToVtt (event, { characterPerLine = 40, maxL
                 }
             }, [])
             .reduce((acc, cur) => {
-                if (acc.length === 0) {
+                if (acc.length === 0)
                     return [cur];
-                }
 
                 const last = acc[acc.length - 1];
 
@@ -132,7 +129,6 @@ export default function awsTranscribeToVtt (event, { characterPerLine = 40, maxL
 
             }, [])
             .reduce((acc, cur, idx) => {
-
                 return [...acc,
                     `${idx + 1}\n` +
                     `${createTimeStamp(cur.from)} --> ${createTimeStamp(cur.to)}\n` +

@@ -7,7 +7,7 @@
   "scripts": {
     "build": "rollup --format=cjs --file=dist/aws-transcription-to-vtt.cjs.js index.js",
     "prepublishOnly": "npm run build",
-    "test": "tap test/"
+    "test": "tap test/*.js"
   },
   "repository": {
     "type": "git",
