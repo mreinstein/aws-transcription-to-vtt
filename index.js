@@ -72,7 +72,7 @@ export default function awsTranscribeToVtt (event, { characterPerLine = 40, maxL
                 content: e.alternatives[0].content,
                 from: Math.floor(parseFloat(e.start_time) * 1000),
                 to: Math.floor(parseFloat(e.end_time) * 1000),
-                characterCount: e.alternatives[0].content.length,
+                characterCount: e.alternatives[0].content ? e.alternatives[0].content.length : 0,
                 type: e.type, // pronunciation | punctuation
                 lines: 1
             }))
