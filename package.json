@@ -21,7 +21,7 @@
   "homepage": "https://github.com/mreinstein/aws-transcription-to-vtt#readme",
   "devDependencies": {
     "rollup": "^1.2.2",
-    "tap": "^12.5.3"
+    "tap": "^14.4.1"
   },
   "keywords": [
     "AWS",
