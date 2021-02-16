@@ -27,6 +27,12 @@ const vtt = vttConvert(json)
 
 returns a string consisting of the json converted to `vtt` format.
 
+## cli
+
+```
+npm build
+node cli.js < transcript.json > something.vtt
+```
 
 ## including
 

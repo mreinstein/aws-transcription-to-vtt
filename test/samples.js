@@ -1,6 +1,6 @@
 import fs         from 'fs';
 import tap        from 'tap';
-import vttConvert from '../index.js';
+import vttConvert from '../lib';
 
 
 for (const sample of [ 'expert', 'se-radio' ]) {

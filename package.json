@@ -3,9 +3,9 @@
   "version": "1.0.3",
   "description": "convert an AWS transcribe JSON body into a .vtt file",
   "main": "dist/aws-transcription-to-vtt.cjs.js",
-  "module": "index.js",
+  "module": "lib/index.js",
   "scripts": {
-    "build": "rollup --format=cjs --file=dist/aws-transcription-to-vtt.cjs.js index.js",
+    "build": "rollup --format=cjs --file=dist/aws-transcription-to-vtt.cjs.js lib/index.js",
     "prepublishOnly": "npm run build",
     "test": "tap test/*.js"
   },

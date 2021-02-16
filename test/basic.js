@@ -1,5 +1,5 @@
 import tap        from 'tap';
-import vttConvert from '../index.js';
+import vttConvert from '../lib';
 
 
 // some transcription items don't have an end_time field
