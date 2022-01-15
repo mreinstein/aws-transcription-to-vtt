@@ -1,6 +1,7 @@
 # aws-transcription-to-vtt
 
-[![Build Status](https://travis-ci.org/mreinstein/aws-transcription-to-vtt.svg?branch=master)](https://travis-ci.org/mreinstein/aws-transcription-to-vtt)
+![tests](https://github.com/mreinstein/aws-transcription-to-vtt/actions/workflows/main.yml/badge.svg)
+
 
 Takes the JSON from [Amazon AWS Transcribe](https://aws.amazon.com/transcribe/) and outputs a VTT file.
 
