@@ -1,6 +1,6 @@
 {
   "name": "aws-transcription-to-vtt",
-  "version": "1.0.3",
+  "version": "2.0.0",
   "description": "convert an AWS transcribe JSON body into a .vtt file",
   "main": "index.js",
   "type": "module",

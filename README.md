@@ -8,8 +8,8 @@ Takes the JSON from [Amazon AWS Transcribe](https://aws.amazon.com/transcribe/) 
 I couldn't find a module satisfying all of these criteria:
 * has documentation
 * has tests
-* works in both commonjs (node) and es modules (import)
-* has minimal dependencies
+* pure es module
+* 0 dependencies
 * is tiny (< 150 lines of code)
 
 so here we are.
@@ -29,7 +29,7 @@ const vtt = vttConvert(json)
 returns a string consisting of the json converted to `vtt` format.
 
 
-## example
+## full example
 
 ```javascript
 import vttConvert from 'aws-transcription-to-vtt'
@@ -76,6 +76,6 @@ returns a string consisting of the json converted to `vtt` format.
 
 
 ## testing
-```javascript
-node test
+```bash
+npm test
 ```
