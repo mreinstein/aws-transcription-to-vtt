@@ -29,19 +29,12 @@ const vtt = vttConvert(json)
 returns a string consisting of the json converted to `vtt` format.
 
 
-## including
+## example
 
 ```javascript
 import vttConvert from 'aws-transcription-to-vtt'
 
-// *OR*
 
-const vttConvert = require('aws-transcription-to-vtt')
-```
-
-
-## example
-```javascript
 const json = {
 	results: {
         transcripts: [

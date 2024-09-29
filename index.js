@@ -1,60 +1,5 @@
 // TODO: implement multiline srt, but only if lines match from <-> to (+-tolerance)
 
-
-function createMaxCharacterPerLineRule (characterPerLine = 40) {
-    return (element, newElement) =>
-        element.content.length + 1 + newElement.content.length < characterPerLine;
-}
-
-
-function createMaxTimeRule (maxTimeInMs = 1000) {
-    return (element, newElement) => newElement.from - element.to < maxTimeInMs;
-}
-
-
-function createMaxLinesRule (maxLines = 2) {
-    return (element, newElement) => element.lines < maxLines;
-}
-
-
-// similar to moment.duration but without having to pull in the entire moment library
-function duration (ms) {
-    const millisecondsPerHour = 1000 * 3600;
-    const millisecondsPerMinute = 1000 * 60;
-
-    const hours = Math.floor(ms / millisecondsPerHour);
-    ms -= (hours * millisecondsPerHour);
-
-    const minutes = Math.floor(ms / millisecondsPerMinute);
-    ms -= (minutes * millisecondsPerMinute);
-
-    const seconds = Math.floor(ms / 1000);
-    ms -= (seconds * 1000); 
-
-    return {
-        hours: () => hours,
-        minutes: () => minutes,
-        seconds: () => seconds,
-        milliseconds: () => ms
-    };
-}
-
-
-function createTimeStamp (ms) {
-    const dur = duration(ms);
-    return `${
-        dur.hours() > 9 ? dur.hours() : '0' + dur.hours()
-        }:${
-        dur.minutes() > 9 ? dur.minutes() : '0' + dur.minutes()
-        }:${
-        dur.seconds() > 9 ? dur.seconds() : '0' + dur.seconds()
-        }.${
-        dur.milliseconds() > 99 ? dur.milliseconds() : dur.milliseconds() > 9 ? '0' + dur.milliseconds() : '00' + dur.milliseconds()
-        }`;
-}
-
-
-
 export default function awsTranscribeToVtt (event, { characterPerLine = 40, maxLines = 2, maxTimeInMs = 1000 } = { }) {
     const wordsToLineMergeRules = [
         createMaxCharacterPerLineRule(characterPerLine),
@@ -135,4 +80,57 @@ export default function awsTranscribeToVtt (event, { characterPerLine = 40, maxL
                     `${cur.content}\n\n`];
             }, [])
             .join('');
+}
+
+
+function createMaxCharacterPerLineRule (characterPerLine = 40) {
+    return (element, newElement) =>
+        element.content.length + 1 + newElement.content.length < characterPerLine;
+}
+
+
+function createMaxTimeRule (maxTimeInMs = 1000) {
+    return (element, newElement) => newElement.from - element.to < maxTimeInMs;
+}
+
+
+function createMaxLinesRule (maxLines = 2) {
+    return (element, newElement) => element.lines < maxLines;
+}
+
+
+// similar to moment.duration but without having to pull in the entire moment library
+function duration (ms) {
+    const millisecondsPerHour = 1000 * 3600;
+    const millisecondsPerMinute = 1000 * 60;
+
+    const hours = Math.floor(ms / millisecondsPerHour);
+    ms -= (hours * millisecondsPerHour);
+
+    const minutes = Math.floor(ms / millisecondsPerMinute);
+    ms -= (minutes * millisecondsPerMinute);
+
+    const seconds = Math.floor(ms / 1000);
+    ms -= (seconds * 1000); 
+
+    return {
+        hours: () => hours,
+        minutes: () => minutes,
+        seconds: () => seconds,
+        milliseconds: () => ms
+    };
+}
+
+
+function createTimeStamp (ms) {
+    const dur = duration(ms);
+    return `${
+        dur.hours() > 9 ? dur.hours() : '0' + dur.hours()
+        }:${
+        dur.minutes() > 9 ? dur.minutes() : '0' + dur.minutes()
+        }:${
+        dur.seconds() > 9 ? dur.seconds() : '0' + dur.seconds()
+        }.${
+        dur.milliseconds() > 99 ? dur.milliseconds() : dur.milliseconds() > 9 ? '0' + dur.milliseconds() : '00' + dur.milliseconds()
+        }`;
 }
